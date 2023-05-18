@@ -23,8 +23,8 @@ export function DeckForm({ onSubmit, setRef }: Props) {
         ref={setRef('desc')}
         placeholder="Description"
       />
-      <select ref={setRef('select')} className={styles.input}>
-        <option value="0" selected disabled>
+      <select ref={setRef('select')} className={styles.input} defaultValue={0}>
+        <option value="0" disabled>
           Choisir un deck
         </option>
         <option value="rouge">Deck Rouge</option>
