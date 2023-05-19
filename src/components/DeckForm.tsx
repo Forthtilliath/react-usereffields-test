@@ -1,4 +1,4 @@
-import { UseRefFieldsActions } from '../utils/hooks/useRefFields';
+import { UseRefFieldsActions } from 'react-usereffields';
 import styles from './DeckForm.module.css';
 
 type Props = {

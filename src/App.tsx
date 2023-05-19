@@ -1,6 +1,6 @@
 import './App.css';
 import { DeckForm, inputsName } from './components/DeckForm';
-import { useRefFields } from './utils/hooks/useRefFields';
+import { useRefFields } from 'react-usereffields';
 
 function App() {
   const [, { setRef, getAllRef }] = useRefFields(inputsName);
