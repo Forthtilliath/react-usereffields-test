@@ -1,30 +1,47 @@
-import { UseRefFieldsActions } from 'react-usereffields';
-import styles from './DeckForm.module.css';
+import { UseRefFieldsActions } from "react-usereffields";
+import styles from "./DeckForm.module.css";
+import { MyInputRadio } from "./MyInputRadio";
 
 type Props = {
   onSubmit: React.FormEventHandler<HTMLFormElement>;
-  setRef: UseRefFieldsActions<typeof inputsName[number]>['setRef'];
+  setRef: UseRefFieldsActions<(typeof inputsName)[number]>["setRef"];
 };
 
-export const inputsName = ['name', 'desc', 'select'] as const;
+export const inputsName = ["name", "desc", "radio_test", "select"] as const;
+
+const radio_test = [
+  {
+    label: "Label 1",
+    value: "label1",
+  },
+  {
+    label: "Label 2",
+    value: "label2",
+  },
+  {
+    label: "Label 3",
+    value: "label3",
+  },
+];
 
 export function DeckForm({ onSubmit, setRef }: Props) {
   return (
     <form onSubmit={onSubmit} className={styles.wrapper}>
       <input
         type="text"
-        ref={setRef('name')}
+        ref={setRef("name")}
         className={styles.input}
         placeholder="Deck name"
       />
       <textarea
         cols={30}
         rows={10}
-        ref={setRef('desc')}
+        ref={setRef("desc")}
         placeholder="Description"
       />
-      <select ref={setRef('select')} className={styles.input} defaultValue={0}>
-        <option value="0" disabled>
+      <MyInputRadio name="radio_test" data={radio_test} setRef={setRef} />
+      <select ref={setRef("select")} className={styles.input} defaultValue={"default"}>
+        <option value="default" disabled>
           Choisir un deck
         </option>
         <option value="rouge">Deck Rouge</option>
