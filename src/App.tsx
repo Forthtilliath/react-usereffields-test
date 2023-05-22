@@ -10,7 +10,7 @@ function App() {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    console.log(getRef("radio_test"));
+    console.log(getRef("age"));
     console.log(getAllRef());
 
     focusIfEmpty("name");
